@@ -1,0 +1,102 @@
+<details>
+<summary><strong>Example index.html</strong></summary>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audio Table Demo</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background: #f3f3f3;
+    }
+    audio {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Audio Table Example</h1>
+  
+  <!-- A simple table with columns for ADT and rows for different “songs” -->
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Full Misx</th>
+        <th>Drums stem</th>
+        <th>Model1</th>
+        <th>Model2</th>
+        <th>Model3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Example Row #1 (song1) -->
+      <tr>
+        <td>Ground-truth</td>
+        <td>
+          <audio controls>
+            <source src="audio/track1_kick.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/track1_snare.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/track1_toms.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/track1_hihat.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </td>
+      </tr>
+      
+      <!-- Example Row #2 (song2) -->
+      <tr>
+        <td>LarsNet</td>
+        <td>
+          <audio controls>
+            <source src="audio/larsnet_track1_kick.wav" type="audio/wav" />
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/larsnet_track1_snare.wav" type="audio/wav" />
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/larsnet_track1_toms.wav" type="audio/wav" />
+          </audio>
+        </td>
+        <td>
+          <audio controls>
+            <source src="audio/larsnet_track1_hihat.wav" type="audio/wav" />
+          </audio>
+        </td>
+      </tr>
+
+      <!-- Add more rows for each method/track as needed -->
+    </tbody>
+  </table>
+</body>
+</html>
