@@ -1,102 +1,87 @@
-<details>
-<summary><strong>Example index.html</strong></summary>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Audio Table Demo</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 80%;
-      margin: 20px auto;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px 12px;
-      text-align: center;
-    }
-    th {
-      background: #f3f3f3;
-    }
-    audio {
-      width: 200px;
-    }
-  </style>
-</head>
-<body>
-  <h1 style="text-align:center;">Audio Table Example</h1>
-  
-  <!-- A simple table with columns for ADT and rows for different “songs” -->
-  <table>
-    <thead>
-      <tr>
-        <th>Method</th>
-        <th>Full Misx</th>
-        <th>Drums stem</th>
-        <th>Model1</th>
-        <th>Model2</th>
-        <th>Model3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Example Row #1 (song1) -->
-      <tr>
-        <td>Ground-truth</td>
-        <td>
-          <audio controls>
-            <source src="audio/track1_kick.wav" type="audio/wav" />
-            Your browser does not support the audio element.
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/track1_snare.wav" type="audio/wav" />
-            Your browser does not support the audio element.
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/track1_toms.wav" type="audio/wav" />
-            Your browser does not support the audio element.
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/track1_hihat.wav" type="audio/wav" />
-            Your browser does not support the audio element.
-          </audio>
-        </td>
-      </tr>
-      
-      <!-- Example Row #2 (song2) -->
-      <tr>
-        <td>LarsNet</td>
-        <td>
-          <audio controls>
-            <source src="audio/larsnet_track1_kick.wav" type="audio/wav" />
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/larsnet_track1_snare.wav" type="audio/wav" />
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/larsnet_track1_toms.wav" type="audio/wav" />
-          </audio>
-        </td>
-        <td>
-          <audio controls>
-            <source src="audio/larsnet_track1_hihat.wav" type="audio/wav" />
-          </audio>
-        </td>
-      </tr>
 
-      <!-- Add more rows for each method/track as needed -->
-    </tbody>
-  </table>
+<head>
+    <meta charset="utf-8" />
+    <title>Audio Comparison</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Audio Comparison</h1>
+        </header>
+        
+        <div class="visible" id="area2">
+            <style>
+                th, td {
+                    padding: 10px;
+                }
+                td.audio {
+                    text-align: center;
+                }
+            </style>
+
+            <table class="audiotable" border="0" width="100%">
+                <tr class="highlight">
+                    <td class="secondary"></td>
+                    <td class="audio"><h3>Full Mix</h3></td>
+                    <td class="audio"><h3>Drum Stem</h3></td>
+                    <td class="audio"><h3>Model 1</h3></td>
+                    <td class="audio"><h3>Model 2</h3></td>
+                    <td class="audio"><h3>Model 3</h3></td>
+                </tr>
+
+                <!-- 第一首歌 -->
+                <tr class="even">
+                    <td class="secondary">
+                        <h3>_pac_california_love_hook</h3>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="input_audio/_pac_california_love_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="drums_file/_pac_california_love_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="output_audio_onset/_pac_california_love_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="output_audio_adtof/_pac_california_love_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="output_audio_hybrid/_pac_california_love_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                </tr>
+
+                <!-- 第二首歌 -->
+                <tr class="even">
+                    <td class="secondary">
+                        <h3>_pac_dear_mama_hook</h3>
+                    </td>
+                    <td class="audio">
+                        <audio controls preload="none">
+                            <source src="input_audio/_pac_dear_mama_hook_full_mix_audio.wav" type="audio/wav">
+                        </audio>
+                    </td>
+                    <!-- 其他列的音檔按照相同模式添加 -->
+                </tr>
+
+                <!-- 以此類推，為其他歌曲添加類似的行 -->
+                
+            </table>
+        </div>
+    </div>
 </body>
 </html>
